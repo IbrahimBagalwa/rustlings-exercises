@@ -2,8 +2,7 @@ fn vec_loop(input: &[i32]) -> Vec<i32> {
     let mut output = Vec::new();
 
     for element in input {
-        // TODO: Multiply each element in the `input` slice by 2 and push it to
-        // the `output` vector.
+        output.push(element * 2);
     }
 
     output
@@ -17,20 +16,20 @@ fn vec_map_example(input: &[i32]) -> Vec<i32> {
 }
 
 fn vec_map(input: &[i32]) -> Vec<i32> {
-    // TODO: Here, we also want to multiply each element in the `input` slice
-    // by 2, but with iterator mapping instead of manually pushing into an empty
-    // vector.
-    // See the example in the function `vec_map_example` above.
     input
         .iter()
         .map(|element| {
-            // ???
+            element * 2
         })
         .collect()
 }
 
 fn main() {
-    // You can optionally experiment here.
+    let vec_input = vec![1, 2, 3, 4];
+    let vec_loop_example = vec_loop(&vec_input);
+    println!("vec loop example: {:?}", vec_loop_example);
+    let vec_map_example = vec_map(&vec_input);
+    println!("vec map example : {:?}", vec_map_example);
 }
 
 #[cfg(test)]
